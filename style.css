@@ -1,0 +1,173 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 550px;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 2.2em;
+    font-weight: 600;
+}
+
+.add-task-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+input[type="text"] {
+    flex-grow: 1;
+    padding: 12px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1.1em;
+    color: #555;
+    outline: none;
+    transition: border-color 0.2s ease-in-out;
+    margin-bottom: 25px;
+}
+
+input[type="text"]::placeholder {
+    color: #a0a0a0;
+}
+
+input[type="text"]:focus {
+    border-color: #8c7ae6;
+}
+
+button {
+    padding: 12px 25px;
+    background-color: #8c7ae6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 500;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease;
+}
+
+button:hover {
+    background-color: #7160c4;
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+#listaDeTarefas {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#listaDeTarefas li {
+    background-color: #f9f9f9;
+    padding: 15px 20px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1em;
+    color: #444;
+    border: 1px solid #eee;
+    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    word-break: break-word;
+}
+
+#listaDeTarefas li span {
+  max-width: 85%;
+  word-break: break-word;
+}
+
+#listaDeTarefas li:last-child {
+    margin-bottom: 0;
+}
+
+#listaDeTarefas li.concluida {
+    text-decoration: line-through;
+    color: #999;
+    background-color: #e6ffe6;
+    border-color: #c0f4c0;
+}
+
+#listaDeTarefas li button {
+    background-color: #ff6b6b;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-size: 0.95em;
+    transition: background-color 0.2s ease-in-out;
+    margin-left: 15px;
+    white-space: nowrap;       
+    min-width: 100px; 
+    align-items: center;
+}
+
+#listaDeTarefas li button:hover {
+    background-color: #ee5253;
+    transform: translateY(-1px);
+}
+
+.checkboxTarefa {
+  margin-right: 10px;
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.concluida {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+
+@media (max-width: 600px) {
+    .container {
+        padding: 25px 20px;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .add-task-section {
+        flex-direction: column;
+    }
+
+    input[type="text"],
+    button {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    #listaDeTarefas li {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 12px 15px;
+    }
+
+    #listaDeTarefas li button {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
